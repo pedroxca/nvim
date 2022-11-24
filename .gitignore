@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Compiled Lua sources
 luac.out
 
@@ -41,3 +42,7 @@ luac.out
 
 
 plugin/packer_compiled.lua
+=======
+autoload/*
+plugged/*
+>>>>>>> d46e4f408b1c7ed238bd5c7988b657657bc5af10
