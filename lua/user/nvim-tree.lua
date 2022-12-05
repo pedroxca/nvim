@@ -87,7 +87,7 @@ nvim_tree.setup {
         relativenumber = false,
     },
     actions = {
-        quit_on_open = true,
+        -- quit_on_open = true,
         -- window_picker = { enable = true },
     },
     renderer = {

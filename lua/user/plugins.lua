@@ -63,6 +63,8 @@ return packer.startup(function(use)
   use "olimorris/onedarkpro.nvim"
   -- colorschemes
   use { "doums/darcula"}
+  -- Using Packer:
+  use 'Mofiqul/dracula.nvim'
   --Dispatch
   use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
 
@@ -86,6 +88,9 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "williamboman/mason.nvim" -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
+  use {
+    "ray-x/lsp_signature.nvim"
+  }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
