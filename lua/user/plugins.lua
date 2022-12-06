@@ -121,10 +121,12 @@ return packer.startup(function(use)
           require'alpha'.setup(require'alpha.themes.startify'.config)
       end
   }
-  use { 
+  use {
     "catppuccin/nvim", as = "catppuccin",
     flavour = "mocha"
   }
+
+  use "rcarriga/nvim-notify"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
