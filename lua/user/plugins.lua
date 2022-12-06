@@ -64,7 +64,7 @@ return packer.startup(function(use)
   -- colorschemes
   use { "doums/darcula"}
   -- Using Packer:
-  use 'Mofiqul/dracula.nvim'
+  use {'dracula/vim', as = 'dracula'}
   --Dispatch
   use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
 
@@ -112,6 +112,19 @@ return packer.startup(function(use)
   use "mfussenegger/nvim-jdtls"
   use "BurntSushi/ripgrep"
   use "sharkdp/fd"
+
+  use 'lewis6991/impatient.nvim'
+  use {
+      'goolord/alpha-nvim',
+      requires = { 'nvim-tree/nvim-web-devicons' },
+      config = function ()
+          require'alpha'.setup(require'alpha.themes.startify'.config)
+      end
+  }
+  use { 
+    "catppuccin/nvim", as = "catppuccin",
+    flavour = "mocha"
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

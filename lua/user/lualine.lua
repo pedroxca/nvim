@@ -19,7 +19,7 @@ local diagnostics = {
 
 local diff = {
 	"diff",
-	colored = false,
+	colored = true,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
   cond = hide_in_width
 }
@@ -27,25 +27,27 @@ local diff = {
 local mode = {
 	"mode",
 	fmt = function(str)
-		return "-- " .. str .. " --"
+		return " " .. str .. " "
 	end,
 }
 
 local filetype = {
 	"filetype",
-	icons_enabled = false,
+	icons_enabled = true,
 	icon = nil,
 }
 
 local branch = {
 	"branch",
 	icons_enabled = true,
-	icon = "",
+	icon = "",
 }
 
 local location = {
 	"location",
-	padding = 0,
+	padding = {
+    right = 1
+  },
 }
 
 -- cool function for progress
@@ -65,10 +67,10 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "dracula",
+		theme = "catppuccin",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
+		disabled_filetypes = { "dashboard",  "Outline" },
 		always_divide_middle = true,
 	},
 	sections = {
