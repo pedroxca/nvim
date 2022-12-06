@@ -43,4 +43,4 @@ luac.out
 plugin/packer_compiled.lua
 autoload/*
 plugged/*
-.ssh_senha
+ssh_senha
