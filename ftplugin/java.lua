@@ -1,5 +1,7 @@
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local path_to_lombok = '/usr/local/share/lombok/lombok.jar'
+local home = '/home/vagrant'
+local java_path= '/usr/lib/jvm/java-17-openjdk-amd64/bin/java'
 local status, jdtls = pcall(require, "jdtls")
 if not status then
 	return
@@ -14,7 +16,7 @@ local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 local config = {
 	cmd = {
-		'/usr/lib/jvm/java-17-oracle/bin/java', -- or '/path/to/java17_or_newer/bin/java'
+    java_path,
 		'-Declipse.application=org.eclipse.jdt.ls.core.id1',
 		'-Dosgi.bundles.defaultStartLevel=4',
 		'-Declipse.product=org.eclipse.jdt.ls.core.product',
@@ -25,8 +27,10 @@ local config = {
 		'--add-modules=ALL-SYSTEM',
 		'--add-opens', 'java.base/java.util=ALL-UNNAMED',
 		'--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-		'-jar', '/home/vagrant/.jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-		'-configuration', '/home/vagrant/.jdtls/config_linux',
+		'-jar',
+    vim.fn.glob(home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar"),
+		'-configuration',
+    home .. "/.local/share/nvim/lsp_servers/jdtls/config_linux",
 		'-data', workspace_dir
 	},
 

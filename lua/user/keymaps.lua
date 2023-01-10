@@ -79,3 +79,7 @@ keymap("n", "<C-\\>", "<cmd>:ToggleTerm<CR>", opts)
 keymap("i", "<C-\\>", "<cmd>:ToggleTerm<CR>", opts)
 keymap("t", "<C-\\>", "<cmd>:ToggleTerm<CR>", opts)
 
+keymap("n", "<leader>l", "<cmd>:noh<CR>", opts)
+
+
+keymap("n", "<leader>tse", "<cmd>:TSEnable highlight<CR>", opts)

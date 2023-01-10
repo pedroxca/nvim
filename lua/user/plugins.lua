@@ -65,6 +65,7 @@ return packer.startup(function(use)
   use { "doums/darcula"}
   -- Using Packer:
   use {'dracula/vim', as = 'dracula'}
+  use { "ellisonleao/gruvbox.nvim" }
   --Dispatch
   use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
 
@@ -127,6 +128,10 @@ return packer.startup(function(use)
   }
 
   use "rcarriga/nvim-notify"
+  use {'nyoom-engineering/oxocarbon.nvim'}
+  use {'xiyaowong/nvim-transparent'}
+  use {'edluffy/hologram.nvim'}
+use "rebelot/kanagawa.nvim"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
